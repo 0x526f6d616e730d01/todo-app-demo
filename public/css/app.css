@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html, body
+{
+    width:100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Roboto', sans-serif;
+
+    --border-color: grey;
+    --border-radius: 8px;
+    /* super soft box shadow adds depth */
+    --border-shadow: rgb(0 0 0 / 20%) 10px 10px 20px 0px;
+
+    --selected-color: orange;
+}
+
+body 
+{
+    display:flex;
+    flex-direction: column;
+}
+
+nav {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+
+    font-weight: bolder;
+    font-size: larger;
+}
+
+nav .brand 
+{
+    width: 32px; /* Just to force the placeholder to the right size */
+    height: 32px;
+    border: 1px solid black;
+
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+div {
+    display: flex;
+}
+
+main 
+{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.sidebar
+{
+    min-width: 15rem;
+    border-right: 1px var(--border-color) solid;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li 
+{
+    font-weight: bold;
+    margin-top: 1.5rem;   
+    padding: 0.5rem;
+}
+
+.sidebar li.checked {
+    background-color: var(--selected-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--border-shadow);
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+}
+
+.sidebar a:hover 
+{
+    text-decoration: underline;
+}
+
+.sidebar a:before 
+{
+    content: url("/img/tag.svg");
+    margin-right: 0.5rem;
+}
+
+.stickies 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.new-sticky 
+{
+    background-color: var(--selected-color);
+    border: 1px var(--border-color) solid;
+    border-radius: var(--border-radius);
+    box-shadow: var(--border-shadow);
+
+    margin-top: 2rem;
+    margin-left: 7rem;
+    margin-right: 7rem;
+
+    align-items: center;
+}
+
+.new-sticky a {
+    padding: 0.5rem;
+    color:inherit;
+    text-decoration: none;
+}
+
+.new-sticky a:hover {
+    text-decoration: underline;
+}
+
+.new-sticky span {
+    padding: 1rem;
+    outline: none;
+    border: none;
+
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.new-sticky span:after 
+{
+    content: url("/img/corner-right-down.svg");
+    position: relative;
+
+}
+
+.sticky-container {
+    margin-top: 3rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: rgb(17, 188, 255);
+    border-radius: var(--border-radius);
+    min-width: 200px;
+    padding: 1rem;
+    margin: 1rem;
+
+    flex-direction: column;
+
+    
+    box-shadow: var(--border-shadow);
+}
+
+
+.card .title 
+{
+    font-size: larger;
+}
+
+#stickyForm div
+{
+    margin-top: 0.5rem;
+    flex-direction: column;
+}
+
+.error 
+{
+    color: red;
+}
